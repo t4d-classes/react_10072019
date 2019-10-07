@@ -1,0 +1,9 @@
+Exercise 3
+
+Git URL: https://github.com/t4d-classes/react_10072019
+
+1. Create an array of car objects using the hardcoded car data from the table. The array of cars should be defined in Car Tool component. Within the function itself.
+
+2. Utilize the array of car objects to dynamically generate the car table rows.
+
+3. Ensure it works.
