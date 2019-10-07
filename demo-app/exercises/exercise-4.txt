@@ -1,0 +1,9 @@
+Exercise 4
+
+Git URL: https://github.com/t4d-classes/react_10072019
+
+1. Move the array of cars to index.js.
+
+2. Pass the array of cars as props to Car Tool.
+
+3. Ensure it works.
