@@ -1,0 +1,23 @@
+Exercise 8  434-509-6890
+
+Please include propTypes for all components.
+
+1. Move the header in Color Tool and Car Tool to a single new component named Tool Header. The content of the H1 element should be passed as props.
+
+2. Utilize Tool Header component in both Color Tool and Car Tool.
+
+3. Create a new component named Car Table. Move the Car Table to the new Car Table component.
+
+4. Utilize the Car Table component in Car Tool.
+
+5. Create a new component named Car View Row. Move the data row for the car in the Car Table component to the new Car View Row component.
+
+6. Utilize the Car View Row component in Car Tool.
+
+7. Create a new component named Unordered List. Move the Color Tool list of colors to the new Unordered List component.
+
+8. Use the Unordered List component in Color Tool.
+
+9. Use the Tool Footer component in Color Tool to display the footer information.
+
+10. Ensure it all works.

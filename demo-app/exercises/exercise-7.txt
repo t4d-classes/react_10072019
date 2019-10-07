@@ -1,0 +1,17 @@
+Exercise 7
+
+Git URL: https://github.com/t4d-classes/react_10072019
+
+1. Create a new component named Tool Footer. Display the following HTML in Tool Footer.
+
+<footer>
+  <small>2019 A Cool Company, Inc.</small>
+</footer>
+
+The year should be the current year, and the company name is passed via props.
+
+2. Specify prop type on Tool Footer
+
+3. Utilize Tool Footer in the Car Tool component. The Tool Footer should be displayed at the bottom.
+
+4. Ensure it all works.

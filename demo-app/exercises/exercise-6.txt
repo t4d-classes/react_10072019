@@ -4,7 +4,7 @@ Git URL: https://github.com/t4d-classes/react_10072019
 
 1. Download the Bootstrap CSS file from getbootstap.com. DO NOT DOWNLOAD THE JS FILE.
 
-2. Use the appropriate CSS style classes to style your table including alternating the row colors. Use the style classes Bootstrap.
+2. Use the appropriate CSS style classes to style your table including alternating the row colors. Use the style classes from Bootstrap.
 
 https://getbootstrap.com/docs/4.3/content/tables/
 
