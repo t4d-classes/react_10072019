@@ -1,0 +1,15 @@
+Exercise 1
+
+Git URL: https://github.com/t4d-classes/react_10072019
+
+1. Create a new component named Car Tool in the components folder.
+
+2. Have the new component return the following HTML structure:
+
+<header>
+  <h1>Car Tool</h1>
+</header>
+
+3. Import Car Tool component into the index.js file and display the Car Tool component beneath the Hello World component.
+
+4. Ensure it works.
