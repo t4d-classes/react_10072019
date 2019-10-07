@@ -1,0 +1,11 @@
+Exercise 2
+
+Git URL: https://github.com/t4d-classes/react_10072019
+
+1. Create a table of cars in the Car Tool component. Please do not create a new component. For the table use the HTML table tag and related elements.
+
+2. Display the following columns: Id, Make, Model, Year, Color, Price
+
+3. Hard-code (do not make it dynamic) two rows of car data. Use any two cars you would like.
+
+4. Ensure it works.
