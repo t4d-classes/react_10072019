@@ -1,11 +1,6 @@
 import React from 'react';
 
-export const CarTool = () => {
-
-  const cars = [
-    { id: 1, make: 'Ford', model: 'Fusion Hybrid', year: 2019, color: 'white', price: 45000 },
-    { id: 2, make: 'Tesla', model: 'S', year: 2019, color: 'red', price: 100000 },
-  ];
+export const CarTool = ({ cars }) => {
 
   return <>
     <header>
