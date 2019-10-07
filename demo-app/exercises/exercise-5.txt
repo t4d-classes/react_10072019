@@ -2,6 +2,8 @@ Exercise 5
 
 Git URL: https://github.com/t4d-classes/react_10072019
 
+Cheat Sheet: https://reactjs.org/docs/typechecking-with-proptypes.html
+
 1. Implement PropTypes on Car Table
 
 2. Display a row with the text "There are no cars." when the car array is empty or null.

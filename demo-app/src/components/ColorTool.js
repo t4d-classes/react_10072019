@@ -1,17 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+
+const ColorListItem = styled.li`
+  text-decoration: underline;
+  ${props => css`
+    color: ${props.children.replace(' ', '')}
+  `}
+`;
 
 export const ColorTool = ({ colors }) => {
 
   return <>
     <header>
-      <h1>Color Tool</h1>
+      <h1 className="info" style={ { fontFamily: 'arial' } }>Color Tool</h1>
     </header>
     <ul>
       {(!colors || colors.length === 0)
         ? <li>There are no colors.</li>
         : colors.map( (color) =>
-            <li key={color.id}>{color.name}</li>)}
+            <ColorListItem key={color.id}>{color.name}</ColorListItem>)}
     </ul>
   </>;
 
