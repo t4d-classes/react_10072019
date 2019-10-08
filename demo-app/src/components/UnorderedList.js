@@ -1,13 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
-export const UnorderedList = ({ items }) => {
+export const UnorderedList = (props) => {
+
+  const {
+    items,
+    emptyListMessage,
+    keyField,
+    contentField,
+  } = props;
 
   return <ul>
     {(!items || items.length === 0)
-      ? <li>There are no items.</li>
-      : items.map( (item) => <li key={item.id}>
-          {item.name}
+      ? <li>{emptyListMessage}</li>
+      : items.map( (item) => <li key={keyField(item)}>
+          {contentField(item)}
         </li>)}
   </ul>;
 
@@ -15,8 +22,12 @@ export const UnorderedList = ({ items }) => {
 
 UnorderedList.defaultProps = {
   items: [],
+  emptyListMessage: 'There are no items.',
+  keyField: item => item.id,
+  contentField: item =>
+    item.name.slice(0,1).toUpperCase() + item.name.slice(1),
 };
 
-UnorderedList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+// UnorderedList.propTypes = {
+//   items: PropTypes.arrayOf(PropTypes.string).isRequired,
+// };

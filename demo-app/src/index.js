@@ -17,9 +17,13 @@ const carList = [
   { id: 2, make: 'Tesla', model: 'S', year: 2019, color: 'red', price: 100000 },
 ];
 
+// parameter = argument
+// variable = expression
+
 ReactDOM.render(
   // React.createElement(ColorTool),
   <>
+    {/*         parameter = argument */}
     <ColorTool colors={colorList} />
     <CarTool cars={carList} />
   </>,

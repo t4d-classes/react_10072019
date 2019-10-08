@@ -1,0 +1,7 @@
+Exercise 9
+
+1. In car tool, create a form to capture car data for make, model, year, color and price.
+
+2. Display the captured car data in the console on each render. Do not worry about adding the car to the array of cars.
+
+3. Ensure it works.
