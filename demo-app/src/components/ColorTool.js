@@ -1,28 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
 
-const ColorListItem = styled.li`
-  text-decoration: underline;
-  ${props => css`
-    color: ${props.children.replace(' ', '')}
-  `}
-`;
+import { colorsPropType } from '../propTypes/colorPropType';
+import { ToolHeader } from './ToolHeader';
+import { ToolFooter } from './ToolFooter';
+import { UnorderedList } from './UnorderedList';
 
 export const ColorTool = ({ colors }) => {
 
   return <>
-    <header>
-      <h1 className="info" style={ { fontFamily: 'arial' } }>Color Tool</h1>
-    </header>
-    <ul>
-      {(!colors || colors.length === 0)
-        ? <li>There are no colors.</li>
-        : colors.map( (color) =>
-            <ColorListItem key={color.id}>{color.name}</ColorListItem>)}
-    </ul>
+    <ToolHeader headerText="Color Tool" />
+    <UnorderedList items={colors} />
+    <ToolFooter companyName="A Cool Company, Inc." />
   </>;
-
 };
 
 ColorTool.defaultProps = {
@@ -30,8 +19,5 @@ ColorTool.defaultProps = {
 };
 
 ColorTool.propTypes = {
-  colors: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-  })).isRequired,
+  colors: colorsPropType.isRequired,
 };

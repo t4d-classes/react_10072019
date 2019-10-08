@@ -1,33 +1,25 @@
 import React from 'react';
 
+import { carsPropType } from '../propTypes/carPropTypes';
+
+import { ToolHeader } from './ToolHeader';
+import { ToolFooter } from './ToolFooter';
+import { CarTable } from './CarTable';
+
 export const CarTool = ({ cars }) => {
 
   return <>
-    <header>
-      <h1>Car Tool</h1>
-    </header>
-    <table>
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Make</th>
-          <th>Model</th>
-          <th>Year</th>
-          <th>Color</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        {cars.map(car => <tr key={car.id}>
-          <td>{car.id}</td>
-          <td>{car.make}</td>
-          <td>{car.model}</td>
-          <td>{car.year}</td>
-          <td>{car.color}</td>
-          <td>{car.price}</td>
-        </tr>)}
-      </tbody>
-    </table>
+    <ToolHeader headerText="Car Tool" />
+    <CarTable cars={cars} />
+    <ToolFooter companyName="A Cool Company, Inc." />
   </>;
 
+};
+
+CarTool.defaultProps = {
+  cars: [],
+};
+
+CarTool.propTypes = {
+  cars: carsPropType.isRequired,
 };

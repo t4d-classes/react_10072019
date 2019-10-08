@@ -1,4 +1,6 @@
-Exercise 8  434-509-6890
+Exercise 8
+
+Git URL: https://github.com/t4d-classes/react_10072019
 
 Please include propTypes for all components.
 
