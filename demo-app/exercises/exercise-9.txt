@@ -1,7 +1,17 @@
 Exercise 9
 
+Git URL: https://github.com/t4d-classes/react_10072019
+
 1. In car tool, create a form to capture car data for make, model, year, color and price.
 
 2. Display the captured car data in the console on each render. Do not worry about adding the car to the array of cars.
 
 3. Ensure it works.
+
+Bonus: Observe how the price and year are outputed as string. How would you ensure they are captured as numbers.
+
+Hint to convert from string to number:
+
+const n = Number('12');
+
+n // value of 12

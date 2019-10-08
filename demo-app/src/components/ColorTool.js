@@ -5,18 +5,10 @@ import { ToolHeader } from './ToolHeader';
 import { ToolFooter } from './ToolFooter';
 import { UnorderedList } from './UnorderedList';
 
-export const ColorTool = ({ colors }) => {
+export const ColorTool = ({ colors: initialColors }) => {
 
-  // // object literal
-  // const person = { fn: 'Bob' };
+  const [ colors, setColors ] = useState(initialColors.concat());
 
-  // // object destructuring
-  // const { fn } = person;
-
-  // console.log(fn); // Bob
-  // console.log(person.fn); // Bob
-
-  // array destructuring
   const [ colorForm, setColorForm ] = useState({
     color: '',
     hexcode: '',
@@ -27,11 +19,24 @@ export const ColorTool = ({ colors }) => {
     // update the newColor variable on the re-render
     setColorForm({
       ...colorForm,
-      [ e.target.name ]: e.target.value,
+      [ e.target.name ]: e.target.type === 'number'
+        ? Number(e.target.value)
+        : e.target.value,
     });
   };
 
-  console.log(colorForm);
+  const addColor = () => {
+
+    setColors(colors.concat({
+      // ...colorForm,
+      name: colorForm.color,
+      id: Math.max(...colors.map(c => c.id), 0) + 1,
+    }));
+
+  };
+  
+  console.log(initialColors);
+  console.log(colors);
 
   return <>
     <ToolHeader headerText="Color Tool" />
@@ -39,14 +44,16 @@ export const ColorTool = ({ colors }) => {
     <form>
       <div>
         <label htmlFor="color-input">Color:</label>
-        <input type="text" id="color-input" name="color" value={colorForm.color} onChange={change} />
+        <input type="text" id="color-input" name="color"
+          value={colorForm.color} onChange={change} />
       </div>
       <div>
         <label htmlFor="hexcode-input">HexCode:</label>
-        <input type="text" id="hexcode-input" name="hexcode" value={colorForm.hexcode} onChange={change} />
+        <input type="number" id="hexcode-input" name="hexcode"
+          value={colorForm.hexcode} onChange={change} />
       </div>
+      <button type="button" onClick={addColor}>Add Color</button>
     </form>
-
     <ToolFooter companyName="A Cool Company, Inc." />
   </>;
 };
