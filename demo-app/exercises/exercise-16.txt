@@ -1,0 +1,15 @@
+Exercise 16
+
+1. Add a delete button next to each history item. When the delete button is clicked, the history item is removed from the array of history items.
+
+2. Display the result when a history item is removed to reflect the removal of that item.
+
+3. Ensure it works.
+
+0
+
+add(2)
+
+multiply(4)
+
+Result 8

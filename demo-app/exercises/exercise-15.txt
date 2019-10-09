@@ -1,0 +1,5 @@
+Exercise 15
+
+1. Implement a Clear button. When the clear button is clicked, the result is set to 0, and the history is emptied. Reset the num input to 0.
+
+2. Ensure it works.
