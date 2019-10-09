@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { carsPropType } from '../propTypes/carPropTypes';
 
@@ -9,12 +9,8 @@ import { CarForm } from './CarForm';
 
 export const CarTool = ({
   cars, editCarId, onAppendCar, onReplaceCar,
-  onDeleteCar, onEditCar, onCancelCar, onRefreshCars,
+  onDeleteCar, onEditCar, onCancelCar,
 }) => {
-
-  useEffect(() => {
-    onRefreshCars().then(cars => { console.log('downloaded cars: ', cars) })
-  }, [ onRefreshCars ]);
 
   const carTableProps = {
     cars,
@@ -23,7 +19,6 @@ export const CarTool = ({
     onEditCar,
     onSaveCar: onReplaceCar,
     onCancelCar,
-    onRefreshCars,
   };
 
   return <>
