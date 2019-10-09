@@ -1,0 +1,15 @@
+Exercise 12
+
+1. Solve world hunger.
+
+2. Solve world peace.
+
+3. Add a new column to the Car Table with a column header of Actions.
+
+4. In the Car View Row add a new column with a button labeled Delete.
+
+5. When the delete button is clicked, remove the car row from the table.
+
+Hint: use the Array filter function to perform the delete
+
+6. Ensure everything works!
