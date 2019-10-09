@@ -1,0 +1,5 @@
+Exercise 14
+
+1. Capture the history of mathematical operations performed on the calculator. Display the history under the calculator buttons. For each history entry display the operation kind and the value used for the operation. Do not track the result of the operation.
+
+2. Ensure it works.

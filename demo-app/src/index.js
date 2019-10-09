@@ -17,28 +17,32 @@ const createDivideAction = value => ({ type: DIVIDE_ACTION, payload: { value } }
 // 2. parameters cannot be mutated
 // 3. no side effects (for example no ajax calls)
 // 4. the only output is the return value
-const calcReducer = (state = { result: 0 }, action) => {
+const calcReducer = (state = { result: 0, history: [] }, action) => {
 
   switch (action.type) {
     case ADD_ACTION:
       return {
         ...state,
         result: state.result + action.payload.value,
+        history: state.history.concat({ opName: action.type, opValue: action.payload.value }),
       };
     case SUBTRACT_ACTION:
       return {
         ...state,
         result: state.result - action.payload.value,
+        history: state.history.concat({ opName: action.type, opValue: action.payload.value }),
       };
     case MULTIPLY_ACTION:
       return {
         ...state,
         result: state.result * action.payload.value,
+        history: state.history.concat({ opName: action.type, opValue: action.payload.value }),
       };
     case DIVIDE_ACTION:
       return {
         ...state,
         result: state.result / action.payload.value,
+        history: state.history.concat({ opName: action.type, opValue: action.payload.value }),
       };
     default:
       return state;
@@ -55,13 +59,15 @@ const divide = value => calcStore.dispatch(createDivideAction(value));
 
 calcStore.subscribe(() => {
 
-  ReactDOM.render(<CalcTool result={calcStore.getState().result}
+  ReactDOM.render(<CalcTool
+    result={calcStore.getState().result}
+    history={calcStore.getState().history}
     onAdd={add} onSubtract={subtract} onMultiply={multiply} onDivide={divide}
   />, document.querySelector('#root'));
 
 });
 
-const CalcTool = ({ result, onAdd, onSubtract, onMultiply, onDivide }) => {
+const CalcTool = ({ result, history, onAdd, onSubtract, onMultiply, onDivide }) => {
 
   const [ numInput, setNumInput ] = useState(0);
 
@@ -78,6 +84,10 @@ const CalcTool = ({ result, onAdd, onSubtract, onMultiply, onDivide }) => {
       <button type="button" onClick={() => onMultiply(numInput)}>*</button>
       <button type="button" onClick={() => onDivide(numInput)}>/</button>
     </fieldset>
+    <ul>
+      {history.map( (historyEntry, index) =>
+        <li key={index}>{historyEntry.opName} {historyEntry.opValue}</li>)}
+    </ul>
 
   </form>;
 }
